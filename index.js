@@ -7,8 +7,7 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-console.log(process.env.DB_PASS);
-console.log(process.env.DB_USER);
+
 
 //New-Coffee-Market
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.bcozk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
@@ -114,7 +113,7 @@ async function run() {
 
     app.post
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
@@ -128,9 +127,9 @@ app.get('/', (req,res)=>{
 })
 
 
-app.listen(port,()=>{
-    console.log (`coffee server is running on port${port} `)
-})
+// app.listen(port,()=>{
+   
+// })
 
 
 
